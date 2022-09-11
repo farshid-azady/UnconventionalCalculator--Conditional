@@ -30,6 +30,14 @@ function createAndWriteOutput(Operator, initialresult, userinput) {
 }
 // useing conditional statements to more dynamic Code we Have and minimal Hard Codes We Have to
 function calculateResult(calculationType) {
+	if (
+		calculationType !== "ADD" &&
+		calculationType !== "SUBTRACT" &&
+		calculationType !== "MULTIPLY" &&
+		calculationType !== "DIVIDE"
+	) {
+		return;
+	}
 	const enteredNumber = getUserNumberInput();
 	const initialresult = currentResult;
 	let mathOperator;
@@ -39,11 +47,10 @@ function calculateResult(calculationType) {
 	} else if (calculationType === "SUBTRACT") {
 		currentResult -= enteredNumber;
 		mathOperator = "-";
-	}else if (calculationType === "MULTIPLY") {
+	} else if (calculationType === "MULTIPLY") {
 		currentResult *= enteredNumber;
 		mathOperator = "*";
-	}else{
-
+	} else if(calculationType === "DIVIDE") {
 		currentResult /= enteredNumber;
 		mathOperator = "/";
 	}
@@ -80,9 +87,7 @@ function divide() {
 	// writeToLog("DIVIDE", enteredNumber, initialresult, currentResult);
 }
 function multiply() {
-
 	calculateResult("MULTIPLY"); //How much Be Clear And Better Code You Have Now.!?
-	
 }
 
 addBtn.addEventListener("click", add);
