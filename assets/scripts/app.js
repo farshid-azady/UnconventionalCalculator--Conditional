@@ -34,7 +34,8 @@ function calculateResult(calculationType) {
 		calculationType !== "ADD" &&
 		calculationType !== "SUBTRACT" &&
 		calculationType !== "MULTIPLY" &&
-		calculationType !== "DIVIDE"
+		calculationType !== "DIVIDE" ||
+		!enteredNumber 
 	) {
 		return;
 	}
@@ -50,7 +51,7 @@ function calculateResult(calculationType) {
 	} else if (calculationType === "MULTIPLY") {
 		currentResult *= enteredNumber;
 		mathOperator = "*";
-	} else if(calculationType === "DIVIDE") {
+	} else if (calculationType === "DIVIDE") {
 		currentResult /= enteredNumber;
 		mathOperator = "/";
 	}
