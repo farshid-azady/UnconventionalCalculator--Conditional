@@ -1,0 +1,29 @@
+this statement check the entrance of calculateResult(calculationType) I mean Check the : calculationType
+and if is not correct only return. and You know after Return Any Block Of code Not executed;I mean after return the code after return are freezed.
+this is the statement:
+
+function calculateResult(calculationType) {
+	if (
+		calculationType !== "ADD" &&
+		calculationType !== "SUBTRACT" &&
+		calculationType !== "MULTIPLY" &&
+		calculationType !== "DIVIDE"
+	) {
+		return;
+	}
+	const enteredNumber = getUserNumberInput();
+	const initialresult = currentResult;
+	let mathOperator;
+	if (calculationType === "ADD") {
+		currentResult += enteredNumber;
+		mathOperator = "+";
+	} else if (calculationType === "SUBTRACT") {
+		currentResult -= enteredNumber;
+		mathOperator = "-";
+	} else if (calculationType === "MULTIPLY") {
+		currentResult *= enteredNumber;
+		mathOperator = "*";
+	} else if(calculationType === "DIVIDE") {
+		currentResult /= enteredNumber;
+		mathOperator = "/";
+	}
